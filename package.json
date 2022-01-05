@@ -1,0 +1,35 @@
+{
+  "name": "gateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "dev": "nodemon dist/app.js",
+    "start": "node dist/app.js"
+  },
+  "author": "eziz-hudayberdiyev <ezizhudayberdiyev123456@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ajv": "^8.8.2",
+    "amqplib": "^0.8.0",
+    "dotenv": "^10.0.0",
+    "fastify": "^3.25.0",
+    "fastify-cors": "^6.0.2",
+    "fastify-plugin": "^3.0.0",
+    "fastify-swagger": "^4.13.0"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.8.2",
+    "@types/node": "^17.0.0"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "tabWidth": 2,
+    "bracketSpacing": true,
+    "semi": false,
+    "trailingComma": "none",
+    "singleQuote": true
+  }
+}
