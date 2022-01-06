@@ -9,8 +9,16 @@
     "dev": "nodemon dist/app.js",
     "start": "node dist/app.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eziz-hudayberdiyev/api-gateway.git"
+  },
   "author": "eziz-hudayberdiyev <ezizhudayberdiyev123456@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eziz-hudayberdiyev/api-gateway/issues"
+  },
+  "homepage": "https://github.com/eziz-hudayberdiyev/api-gateway#readme",
   "dependencies": {
     "ajv": "^8.8.2",
     "amqplib": "^0.8.0",
