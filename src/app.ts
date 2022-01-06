@@ -51,26 +51,6 @@ fastify.register(require('fastify-cors'))
 // register router
 fastify.register(router)
 
-// app.get('/api/v1/products', async (req, res, next) => {
-//   console.log('Firing the request')
-//   const correlationId = Math.random().toString()
-
-//   const broker = await MessageBroker.getInstance()
-//   await broker.send('get_products', Buffer.from('12'), {
-//     correlationId,
-//     replyTo: 'products_result'
-//   })
-
-//   await broker.consume('products_result', msg => {
-//     if (msg!.properties.correlationId == correlationId) {
-//       console.log('I got message bro ', msg!.content.toString())
-//       res.status(200).json({
-//         result: msg!.content.toString()
-//       })
-//     }
-//   })
-// })
-
 // stop rabbitmq connection when server stops
 process.on('beforeExit', async () => {
   const amqp = await MessageBroker.getInstance()

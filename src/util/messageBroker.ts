@@ -14,7 +14,6 @@ interface SendRpcOptions extends amqp.Options.Publish {
  */
 export class MessageBroker {
   // declare class properties
-  // declare class properties
   public connection!: Connection
   public channel!: Channel
   private static instance: MessageBroker
@@ -94,7 +93,6 @@ export class MessageBroker {
     queue: string,
     msg: Buffer,
     options: SendRpcOptions
-    // onCallback: (msg: ConsumeMessage) => void
   ): Promise<ConsumeMessage | null> {
     return new Promise(async (resolve, reject) => {
       await this.send(queue, msg, options)
