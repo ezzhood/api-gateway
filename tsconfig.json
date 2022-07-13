@@ -1,17 +1,17 @@
 {
-	"compilerOptions": {
-		"lib": ["ES6", "DOM"],
-		"outDir": "dist",
-		"sourceMap": true,
-		"module": "commonjs",
-		"target": "es6",
-		"forceConsistentCasingInFileNames": true,
-		"strict": true,
-		"skipLibCheck": true,
-		"emitDecoratorMetadata": true,
-		"resolveJsonModule": true,
-		"experimentalDecorators": true,
-		"moduleResolution": "node"
-	},
-	"include": ["src/**/*"]
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "commonjs",
+    "declaration": true,
+    "esModuleInterop": true,
+    "target": "es6",
+    "strict": true,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "noImplicitReturns": true,
+    "strictPropertyInitialization": false,
+    "skipLibCheck": true,
+    "moduleResolution": "node"
+  },
+  "include": ["./lib/**/*"]
 }
