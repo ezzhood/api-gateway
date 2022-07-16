@@ -1,39 +1,51 @@
 {
-  "name": "gateway",
-  "version": "0.0.1",
-  "description": "node.js api-gateway for services composing",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
-    "dev": "nodemon dist/app.js",
-    "start": "node dist/app.js",
-    "compile": "rimraf ./dist && tsc"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eziz-hudayberdiyev/api-gateway.git"
-  },
-  "author": "eziz-hudayberdiyev <ezizhudayberdiyev123456@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/eziz-hudayberdiyev/api-gateway/issues"
-  },
-  "homepage": "https://github.com/eziz-hudayberdiyev/api-gateway#readme",
-  "dependencies": {
-    "amqplib": "^0.8.0"
-  },
-  "devDependencies": {
-    "@types/amqplib": "^0.8.2",
-    "@types/node": "^17.0.0",
-    "rimraf": "^3.0.2",
-    "ts-node": "^10.8.2",
-    "typescript": "^4.7.4",
-    "dotenv": "^10.0.0",
-    "ajv": "^8.8.2",
-    "fastify": "^3.25.0",
-    "fastify-cors": "^6.0.2",
-    "fastify-plugin": "^3.0.0",
-    "fastify-swagger": "^4.13.0"
-  }
+    "name": "gateway",
+    "version": "0.0.1",
+    "files": [
+        "dist/",
+        "wrapper.mjs"
+    ],
+    "type": "commonjs",
+    "description": "node.js api-gateway for services composing",
+    "main": "./dist/index.js",
+    "scripts": {
+        "build": "tsc",
+        "watch": "tsc -w",
+        "dev": "nodemon dist/app.js",
+        "start": "node dist/app.js",
+        "compile": "rimraf ./dist && tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/eziz-hudayberdiyev/api-gateway.git"
+    },
+    "author": "eziz-hudayberdiyev <ezizhudayberdiyev123456@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/eziz-hudayberdiyev/api-gateway/issues"
+    },
+    "homepage": "https://github.com/eziz-hudayberdiyev/api-gateway#readme",
+    "dependencies": {},
+    "devDependencies": {
+        "@types/amqplib": "^0.8.2",
+        "@types/node": "^17.0.0",
+        "rimraf": "^3.0.2",
+        "ts-node": "^10.8.2",
+        "typescript": "^4.7.4",
+        "dotenv": "^10.0.0",
+        "ajv": "^8.8.2",
+        "fastify": "^3.25.0",
+        "fastify-cors": "^6.0.2",
+        "fastify-plugin": "^3.0.0",
+        "fastify-swagger": "^4.13.0",
+        "amqplib": "^0.8.0"
+    },
+    "peerDependencies": {
+        "amqplib": "^0.8.0"
+    },
+    "peerDependenciesMeta": {
+        "amqplib": {
+            "optional": true
+        }
+    }
 }

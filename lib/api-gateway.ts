@@ -1,3 +1,5 @@
+import { AbstractBroker } from "./brokers/abstract-broker";
+import { RabbitMQBroker } from "./brokers/rabbitmq";
 type BrokerType = "rabbitmq" | "apache-kafka" | "nats";
 
 interface IService {
@@ -15,15 +17,19 @@ interface Broker {
  */
 export class ApiGateway {
     private protocol: string | null;
-    private broker: Broker;
+    public connection_uri: string;
+    private broker: AbstractBroker;
     private services: IService[];
     /**
      * Instantiate with broker type, connection url
      */
-    constructor(message_broker: BrokerType, connection_url: string) {
+    constructor(message_broker: BrokerType, connection_uri: string) {
+        this.connection_uri = connection_uri;
+
         switch (message_broker) {
             case "rabbitmq":
                 this.protocol = "amqp";
+                this.broker = new RabbitMQBroker(this);
                 break;
             case "apache-kafka":
                 // TODO: continue from here
@@ -33,6 +39,14 @@ export class ApiGateway {
             default:
                 break;
         }
+    }
+
+    public async init() {
+        await this.broker.connect();
+    }
+
+    public async stop() {
+        await this.broker.close();
     }
 
     register(service: IService) {}
