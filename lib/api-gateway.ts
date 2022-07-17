@@ -49,5 +49,10 @@ export class ApiGateway {
         await this.broker.close();
     }
 
+    // TODO: to be removed, just for testing
+    public getBroker(){
+        return this.broker;
+    }
+
     register(service: IService) {}
 }
